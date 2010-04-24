@@ -51,7 +51,7 @@ void loop() {
   while (digitalRead(pinSonarIn) == HIGH) { timer++; }
 
   // Calcula distancia
-  dist = float(timer) / 1100.0;
+  dist = float(timer) / 1300.0;
   
   // Escreve distancia na porta serial
   if (ativa_serial) {
@@ -62,7 +62,7 @@ void loop() {
   if (!ativa_servos) {
     servo1control = servonull;
     servo2control = servonull;
-  } else if (dist <= 0.4) { // 40 centimetros
+  } else if (dist <= 0.5) { // 40 centimetros
     if (random(0,2) == 0) {
       // Volta um pouco antes de mudar de rota
       servo1control = 3150;
